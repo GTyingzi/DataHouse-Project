@@ -6,7 +6,7 @@
 
 数据仓库（Data Warehouse），是为企业制度决策，提供数据支持的。
 
-![image-20220217140851416](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20220217140851416.png)
+![image-20220217140851416]https://github.com/GTyingzi/DataHouse-Project/blob/master/images/image-20220217140851416.png
 
 ## 二、项目需求及架构设计
 
