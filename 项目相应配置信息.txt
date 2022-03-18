@@ -6,19 +6,29 @@
 
 -------------------------
 mysql
-密码：000000
------------------------------------------------
-azkaban
-账号：yingzi
-密码：123456
+
+账号root，密码：000000
 
 superset
-用户：yingzi
-密码：000000
+用户：yingzi，密码：000000
 
 KYLIN web界面的登录
-用户名：ADMIN
-密码：KYLIN
+账号：ADMIN，密码：KYLIN
+
+Zabbix
+
+账号：Admin，密码：zabbix
+
+azkaban
+账号：yingzi，密码：123456
+
+Ranger
+
+账号：admin，密码：yingzi123
+
+Atlas
+
+账号：admin,密码：admin
 
 Kerberos部署
 kdb5_util create -s 对应的密码：admin

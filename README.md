@@ -46,6 +46,10 @@
 
 ![image-20220217142108854](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20220217142108854.png)
 
+本项目数据层如下：
+
+![image-20220318191706234](F:\管理Github\DataHouse-Project\images\image-20220318191706234.png)
+
 #### 2.3框架发行版本选型
 
 Apache
@@ -56,7 +60,7 @@ Apache
 
 这里选择阿里云主机，Centos7配置如下：
 
-![image-20220217143231406](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20220217143231406.png)
+![Snipaste_2022-03-18_17-32-04](F:\管理Github\DataHouse-Project\images\Snipaste_2022-03-18_17-32-04.png)
 
 #### 2.5集群资源规划设计
 
@@ -84,6 +88,20 @@ Web UI界面：http://hadoop102:8787
 
 密码：000000
 
+![image-20220318174110703](F:\管理Github\DataHouse-Project\images\image-20220318174110703.png)
+
+
+
+---
+
+关闭Superset区域
+
+```
+sudo -i -u yingzi superset.sh stop
+```
+
+---
+
 
 
 
@@ -94,33 +112,21 @@ Web UI界面：http://hadoop102:8787
 
 依赖于Hadoop、Hive、Zookeeper、HBase
 
-1）启动hadoop
+1）启动前置
 
 ```
 /home/yingzi/bin/hdp.sh start
-```
-
-2）启动zoookeeper
-
-```
 /home/yingzi/bin/zk.sh start
-```
-
-3）启动hbase
-
-```
 sudo -i -u hbase start-hbase.sh
 ```
 
-4）启动Kylin
-
-在kylin用户下认证为hive主体
+2）在kylin用户下认证为hive主体
 
 ```
 sudo -i -u kylin kinit -kt /etc/security/keytab/hive.keytab hive
 ```
 
-以kylin用户的身份启动kylin
+3）以kylin用户的身份启动kylin
 
 ```
 sudo -i -u kylin /opt/module/kylin/bin/kylin.sh start
@@ -132,6 +138,21 @@ Web UI：http://hadoop102:7070/kylin
 密码：KYLIN
 
 日志：/opt/module/kylin/logs/kylin.log
+
+![image-20220318174558328](F:\管理Github\DataHouse-Project\images\image-20220318174558328.png)
+
+---
+
+关闭Kylin区域
+
+```
+sudo -i -u kylin /opt/module/kylin/bin/kylin.sh stop
+sudo -i -u hbase stop-hbase.sh
+/home/yingzi/bin/zk.sh stop
+/home/yingzi/bin/hdp.sh stop
+```
+
+----
 
 
 
@@ -151,6 +172,28 @@ hadoop103、104启动
 ```
 sudo systemctl start zabbix-agent
 sudo systemctl enable zabbix-agent
+```
+
+WEB UI：**http://hadoop102/zabbix/**
+
+![image-20220318185305603](F:\管理Github\DataHouse-Project\images\image-20220318185305603.png)
+
+---
+
+关闭
+
+hadoop102关闭:
+
+```
+sudo systemctl stop zabbix-server zabbix-agent httpd rh-php72-php-fpm
+sudo systemctl disable zabbix-server zabbix-agent httpd rh-php72-php-fpm
+```
+
+hadoop103、104关闭
+
+```
+sudo systemctl stop zabbix-agent
+sudo systemctl disable zabbix-agent
 ```
 
 
@@ -185,7 +228,25 @@ Web UI：http://hadoop102:8081/
 
 密码：123456
 
+![image-20220318175852797](F:\管理Github\DataHouse-Project\images\image-20220318175852797.png)
 
+---
+
+关闭Azkaban区域
+
+关闭Web Server
+
+```
+sudo -i -u azkaban bash -c "cd /opt/module/azkaban/azkaban-web;bin/shutdown-web.sh"
+```
+
+三台主机分别停止Executor
+
+```
+sudo -i -u azkaban bash -c "cd /opt/module/azkaban/azkaban-exec;bin/shutdown-exec.sh"
+```
+
+---
 
 
 
@@ -211,9 +272,15 @@ Web UI：[http://hadoop102:6080](http://hadoop103:6080)
 sudo -i -u ranger ranger-usersync start
 ```
 
+![image-20220318183026514](F:\管理Github\DataHouse-Project\images\image-20220318183026514.png)
 
+---
 
+关闭Ranger区域
 
+```
+sudo -i -u ranger ranger-admin stop
+```
 
 
 
@@ -228,6 +295,8 @@ sudo -i -u solr /opt/module/solr/bin/solr start
 ```
 
 Web UI：[http://hadoop102:8983](http://hadoop102:8983/)
+
+![image-20220318183345546](F:\管理Github\DataHouse-Project\images\image-20220318183345546.png)
 
 
 
@@ -249,13 +318,29 @@ Web UI：http://hadoop102:21000
 
 密码：admin
 
+![image-20220318183750533](F:\管理Github\DataHouse-Project\images\image-20220318183750533.png)
+
+---
+
+Atlas关闭区域
+
+```
+/opt/module/atlas/bin/atlas_stop.py
+
+sudo -i -u solr /opt/module/solr/bin/solr stop（三台都需要）
+sudo -i -u hbase stop-hbase.sh
+/home/yingzi/bin/kf.sh stop
+/home/yingzi/bin/zk.sh stop
+/home/yingzi/bin/hdp.sh stop
+```
 
 
 
 
 
 
-## 四、全流程调度+数据质量可视化
+
+## 四、全流程调度+数据质量检测
 
 1）启动日志采集通道
 
@@ -342,17 +427,9 @@ Web UI:http://hadoop102:8081/
 
 在data_supervisor上填入参数：dt,useExecutor,alert
 
+![image-20220318180154967](F:\管理Github\DataHouse-Project\images\image-20220318180154967.png)
 
 
-5）可视化
 
-```
-sudo -i -u yingzi superset.sh start
-```
-
-Web UI页面：http://hadoop102:8787
-
-用户名：yingzi
-
-密码：000000
+![image-20220318180049483](F:\管理Github\DataHouse-Project\images\image-20220318180049483.png)
 
