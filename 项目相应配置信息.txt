@@ -1,0 +1,28 @@
+虚拟机登录：root
+密码：Aa000000
+
+用户名：yingzi
+密码：000000
+
+-------------------------
+mysql
+密码：000000
+-----------------------------------------------
+azkaban
+账号：yingzi
+密码：123456
+
+superset
+用户：yingzi
+密码：000000
+
+KYLIN web界面的登录
+用户名：ADMIN
+密码：KYLIN
+
+Kerberos部署
+kdb5_util create -s 对应的密码：admin
+Kerberos管理员用户 密码：admin
+
+keystore
+密码：123456
