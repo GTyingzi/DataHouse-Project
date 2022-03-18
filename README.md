@@ -6,7 +6,7 @@
 
 数据仓库（Data Warehouse），是为企业制度决策，提供数据支持的。
 
-![image-20220217140851416]https://github.com/GTyingzi/DataHouse-Project/blob/master/images/image-20220217140851416.png
+![](https://github-do.panbaidu.cn//https://raw.githubusercontent.com/GTyingzi/DataHouse-Project/master/images/image-20220217140851416.png)
 
 ## 二、项目需求及架构设计
 
@@ -44,23 +44,23 @@
 
 #### 2.2系统数据流程设计
 
-![image-20220217142108854](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20220217142108854.png)
+![](https://github-do.panbaidu.cn//https://raw.githubusercontent.com/GTyingzi/DataHouse-Project/master/images/image-20220217142108854.png)
 
 本项目数据层如下：
 
-![image-20220318191706234](F:\管理Github\DataHouse-Project\images\image-20220318191706234.png)
+![](https://github-do.panbaidu.cn//https://raw.githubusercontent.com/GTyingzi/DataHouse-Project/master/images/image-20220318191706234.png)
 
 #### 2.3框架发行版本选型
 
 Apache
 
-![image-20220217142712860](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20220217142712860.png)
+![](https://github-do.panbaidu.cn//https://raw.githubusercontent.com/GTyingzi/DataHouse-Project/master/images/image-20220217142712860.png)
 
 #### 2.4服务器选型
 
 这里选择阿里云主机，Centos7配置如下：
 
-![Snipaste_2022-03-18_17-32-04](F:\管理Github\DataHouse-Project\images\Snipaste_2022-03-18_17-32-04.png)
+![](https://github-do.panbaidu.cn//https://raw.githubusercontent.com/GTyingzi/DataHouse-Project/master/images/Snipaste_2022-03-18_17-32-04.png)
 
 #### 2.5集群资源规划设计
 
@@ -72,7 +72,7 @@ Apache
 
 （4）有依赖关系的尽量放到同一台服务器（例如：Hive和Azkaban Executor）
 
-![image-20220217144357360](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20220217144357360.png)
+![](https://github-do.panbaidu.cn//https://raw.githubusercontent.com/GTyingzi/DataHouse-Project/master/images/image-20220217144357360.png)
 
 ## 三、相关命令
 
@@ -88,7 +88,7 @@ Web UI界面：http://hadoop102:8787
 
 密码：000000
 
-![image-20220318174110703](F:\管理Github\DataHouse-Project\images\image-20220318174110703.png)
+![](https://github-do.panbaidu.cn//https://raw.githubusercontent.com/GTyingzi/DataHouse-Project/master/images/image-20220318174110703.png)
 
 
 
@@ -139,7 +139,7 @@ Web UI：http://hadoop102:7070/kylin
 
 日志：/opt/module/kylin/logs/kylin.log
 
-![image-20220318174558328](F:\管理Github\DataHouse-Project\images\image-20220318174558328.png)
+![](https://github-do.panbaidu.cn//https://raw.githubusercontent.com/GTyingzi/DataHouse-Project/master/images/image-20220318174558328.png)
 
 ---
 
@@ -176,7 +176,7 @@ sudo systemctl enable zabbix-agent
 
 WEB UI：**http://hadoop102/zabbix/**
 
-![image-20220318185305603](F:\管理Github\DataHouse-Project\images\image-20220318185305603.png)
+![](https://github-do.panbaidu.cn//https://raw.githubusercontent.com/GTyingzi/DataHouse-Project/master/images/image-20220318185305603.png)
 
 ---
 
@@ -228,7 +228,7 @@ Web UI：http://hadoop102:8081/
 
 密码：123456
 
-![image-20220318175852797](F:\管理Github\DataHouse-Project\images\image-20220318175852797.png)
+![](https://github-do.panbaidu.cn//https://raw.githubusercontent.com/GTyingzi/DataHouse-Project/master/images/image-20220318175852797.png)
 
 ---
 
@@ -272,7 +272,7 @@ Web UI：[http://hadoop102:6080](http://hadoop103:6080)
 sudo -i -u ranger ranger-usersync start
 ```
 
-![image-20220318183026514](F:\管理Github\DataHouse-Project\images\image-20220318183026514.png)
+![](https://github-do.panbaidu.cn//https://raw.githubusercontent.com/GTyingzi/DataHouse-Project/master/images/image-20220318183026514.png)
 
 ---
 
@@ -296,7 +296,7 @@ sudo -i -u solr /opt/module/solr/bin/solr start
 
 Web UI：[http://hadoop102:8983](http://hadoop102:8983/)
 
-![image-20220318183345546](F:\管理Github\DataHouse-Project\images\image-20220318183345546.png)
+![](https://github-do.panbaidu.cn//https://raw.githubusercontent.com/GTyingzi/DataHouse-Project/master/images/image-20220318183345546.png)
 
 
 
@@ -318,7 +318,7 @@ Web UI：http://hadoop102:21000
 
 密码：admin
 
-![image-20220318183750533](F:\管理Github\DataHouse-Project\images\image-20220318183750533.png)
+![](https://github-do.panbaidu.cn//https://raw.githubusercontent.com/GTyingzi/DataHouse-Project/master/images/image-20220318183750533.png)
 
 ---
 
@@ -427,9 +427,9 @@ Web UI:http://hadoop102:8081/
 
 在data_supervisor上填入参数：dt,useExecutor,alert
 
-![image-20220318180154967](F:\管理Github\DataHouse-Project\images\image-20220318180154967.png)
+![](https://github-do.panbaidu.cn//https://raw.githubusercontent.com/GTyingzi/DataHouse-Project/master/images/image-20220318180154967.png)
 
 
 
-![image-20220318180049483](F:\管理Github\DataHouse-Project\images\image-20220318180049483.png)
+![](https://github-do.panbaidu.cn//https://raw.githubusercontent.com/GTyingzi/DataHouse-Project/master/images/image-20220318180049483.png)
 
