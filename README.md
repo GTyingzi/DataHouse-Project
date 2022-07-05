@@ -6,7 +6,7 @@
 
 数据仓库（Data Warehouse），是为企业制度决策，提供数据支持的。
 
-![](https://github-do.panbaidu.cn//https://raw.githubusercontent.com/GTyingzi/DataHouse-Project/master/images/image-20220217140851416.png)
+![](https://yingziimage.oss-cn-beijing.aliyuncs.com/img/202207051252778.png)
 
 ## 二、项目需求及架构设计
 
@@ -44,23 +44,23 @@
 
 #### 2.2系统数据流程设计
 
-![](https://github-do.panbaidu.cn//https://raw.githubusercontent.com/GTyingzi/DataHouse-Project/master/images/image-20220217142108854.png)
+![](https://yingziimage.oss-cn-beijing.aliyuncs.com/img/202207051253078.png)
 
 本项目数据层如下：
 
-![](https://github-do.panbaidu.cn//https://raw.githubusercontent.com/GTyingzi/DataHouse-Project/master/images/image-20220318191706234.png)
+![](https://yingziimage.oss-cn-beijing.aliyuncs.com/img/202207051253406.png)
 
 #### 2.3框架发行版本选型
 
 Apache
 
-![](https://github-do.panbaidu.cn//https://raw.githubusercontent.com/GTyingzi/DataHouse-Project/master/images/image-20220217142712860.png)
+![](https://yingziimage.oss-cn-beijing.aliyuncs.com/img/202207051253946.png)
 
 #### 2.4服务器选型
 
 这里选择阿里云主机，Centos7配置如下：
 
-![](https://github-do.panbaidu.cn//https://raw.githubusercontent.com/GTyingzi/DataHouse-Project/master/images/Snipaste_2022-03-18_17-32-04.png)
+![](https://yingziimage.oss-cn-beijing.aliyuncs.com/img/202207051254974.png)
 
 #### 2.5集群资源规划设计
 
@@ -72,7 +72,7 @@ Apache
 
 （4）有依赖关系的尽量放到同一台服务器（例如：Hive和Azkaban Executor）
 
-![](https://github-do.panbaidu.cn//https://raw.githubusercontent.com/GTyingzi/DataHouse-Project/master/images/image-20220217144357360.png)
+![](https://yingziimage.oss-cn-beijing.aliyuncs.com/img/202207051255807.png)
 
 ## 三、相关命令
 
@@ -88,9 +88,7 @@ Web UI界面：http://hadoop102:8787
 
 密码：000000
 
-![](https://github-do.panbaidu.cn//https://raw.githubusercontent.com/GTyingzi/DataHouse-Project/master/images/image-20220318174110703.png)
-
-
+![](https://yingziimage.oss-cn-beijing.aliyuncs.com/img/202207051255198.png)
 
 ---
 
@@ -139,7 +137,7 @@ Web UI：http://hadoop102:7070/kylin
 
 日志：/opt/module/kylin/logs/kylin.log
 
-![](https://github-do.panbaidu.cn//https://raw.githubusercontent.com/GTyingzi/DataHouse-Project/master/images/image-20220318174558328.png)
+![](https://yingziimage.oss-cn-beijing.aliyuncs.com/img/202207051256781.png)
 
 ---
 
@@ -176,7 +174,7 @@ sudo systemctl enable zabbix-agent
 
 WEB UI：**http://hadoop102/zabbix/**
 
-![](https://github-do.panbaidu.cn//https://raw.githubusercontent.com/GTyingzi/DataHouse-Project/master/images/image-20220318185305603.png)
+![](https://yingziimage.oss-cn-beijing.aliyuncs.com/img/202207051256883.png)
 
 ---
 
@@ -228,7 +226,7 @@ Web UI：http://hadoop102:8081/
 
 密码：123456
 
-![](https://github-do.panbaidu.cn//https://raw.githubusercontent.com/GTyingzi/DataHouse-Project/master/images/image-20220318175852797.png)
+![](https://yingziimage.oss-cn-beijing.aliyuncs.com/img/202207051257872.png)
 
 ---
 
@@ -272,7 +270,7 @@ Web UI：[http://hadoop102:6080](http://hadoop103:6080)
 sudo -i -u ranger ranger-usersync start
 ```
 
-![](https://github-do.panbaidu.cn//https://raw.githubusercontent.com/GTyingzi/DataHouse-Project/master/images/image-20220318183026514.png)
+![](https://yingziimage.oss-cn-beijing.aliyuncs.com/img/202207051257369.png)
 
 ---
 
@@ -296,7 +294,7 @@ sudo -i -u solr /opt/module/solr/bin/solr start
 
 Web UI：[http://hadoop102:8983](http://hadoop102:8983/)
 
-![](https://github-do.panbaidu.cn//https://raw.githubusercontent.com/GTyingzi/DataHouse-Project/master/images/image-20220318183345546.png)
+![](https://yingziimage.oss-cn-beijing.aliyuncs.com/img/202207051257284.png)
 
 
 
@@ -318,7 +316,7 @@ Web UI：http://hadoop102:21000
 
 密码：admin
 
-![](https://github-do.panbaidu.cn//https://raw.githubusercontent.com/GTyingzi/DataHouse-Project/master/images/image-20220318183750533.png)
+![](https://yingziimage.oss-cn-beijing.aliyuncs.com/img/202207051258654.png)
 
 ---
 
@@ -427,9 +425,7 @@ Web UI:http://hadoop102:8081/
 
 在data_supervisor上填入参数：dt,useExecutor,alert
 
-![](https://github-do.panbaidu.cn//https://raw.githubusercontent.com/GTyingzi/DataHouse-Project/master/images/image-20220318180154967.png)
+![](https://yingziimage.oss-cn-beijing.aliyuncs.com/img/202207051258974.png)
 
-
-
-![](https://github-do.panbaidu.cn//https://raw.githubusercontent.com/GTyingzi/DataHouse-Project/master/images/image-20220318180049483.png)
+![](https://yingziimage.oss-cn-beijing.aliyuncs.com/img/202207051258848.png)
 
